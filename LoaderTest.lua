@@ -1,4 +1,4 @@
---Hirimi Hub Hyper - Rewrite Fixed #7.3
+--Hirimi Hub Hyper - Rewrite Fixed #7.4
 repeat wait() until game:IsLoaded()
 notis = require(game.ReplicatedStorage:WaitForChild("Notification"))
 notis.new("<Color=White>HIRIMI HUB HYPER<Color=/>"):Display()
@@ -1609,6 +1609,8 @@ task.spawn(function()
                         end
                     end
                 end
+                local CameraShaker = require(game.ReplicatedStorage.Util.CameraShaker)
+                CameraShaker:Stop()
             end)
         end
     end
