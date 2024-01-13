@@ -1,4 +1,4 @@
---Hirimi Hub Hyper - Rewrite Fixed & Update #8
+--Hirimi Hub Hyper - Rewrite Fixed & Update #8.1
 repeat wait() until game:IsLoaded()
 notis = require(game.ReplicatedStorage:WaitForChild("Notification"))
 notis.new("<Color=White>HIRIMI HUB HYPER<Color=/>"):Display()
@@ -3258,7 +3258,7 @@ spawn(function()
     end       
 end)
 SeaTab:AddButton({Name = "Teleport Ship To Player", Callback = function()
-    checkboat().VehicleSeat.CFrame = LP.CFrame
+    checkboat().VehicleSeat.CFrame = LP.Character.HumanoidRootPart.CFrame
 end    
 })
 SeaTab:AddSection({Name = "Low Health"})
