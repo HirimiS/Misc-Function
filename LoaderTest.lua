@@ -1,4 +1,4 @@
---Hirimi Hub Hyper - Rewrite Fixed #7.5
+--Hirimi Hub Hyper - Rewrite Fixed #7.6
 repeat wait() until game:IsLoaded()
 notis = require(game.ReplicatedStorage:WaitForChild("Notification"))
 notis.new("<Color=White>HIRIMI HUB HYPER<Color=/>"):Display()
@@ -1672,6 +1672,33 @@ MainTab:AddToggle({
 		EnableFastAttack = vfastchange
 	end    
 })
+CombatFrameworkR = require(LP.PlayerScripts.CombatFramework)
+y = debug.getupvalues(CombatFrameworkR)[2]
+spawn(function()
+    Loop:Connect(function()
+        if EnableFastAttack then
+            if typeof(y) == "table" then
+                pcall(function()
+                    CameraShaker:Stop()
+                    y.activeController.timeToNextAttack = (math.huge^math.huge^math.huge)
+                    y.activeController.timeToNextAttack = -1
+                    y.activeController.hitboxMagnitude = 60
+                    y.activeController.active = false
+                    y.activeController.timeToNextBlock = 0
+                    y.activeController.focusStart = 1655503339.0980349
+                    y.activeController.increment = 3
+                    y.activeController.blocking = false
+                    y.activeController.attacking = false
+                    y.activeController.humanoid.AutoRotate = true
+                end)
+            end
+        end
+        if EnableFastAttack == true then
+            LP.Character.Stun.Value = 0
+            LP.Character.Busy.Value = false        
+        end
+    end)
+end)
 MainTab:AddToggle({
 	Name = "Turn On Race V4",
 	Default = false,
