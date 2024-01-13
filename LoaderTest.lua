@@ -1,4 +1,4 @@
---Hirimi Hub Hyper - Rewrite Fixed #7.6
+--Hirimi Hub Hyper - Rewrite Fixed #7.7
 repeat wait() until game:IsLoaded()
 notis = require(game.ReplicatedStorage:WaitForChild("Notification"))
 notis.new("<Color=White>HIRIMI HUB HYPER<Color=/>"):Display()
@@ -1499,7 +1499,7 @@ spawn(function()
                 if MasteryOption then
                     DelayAttack = 0.9
                 else
-                    DelayAttack = 0.6
+                    DelayAttack = 0.35
                 end
             elseif DelayAttack == "0.2" then
                 DelayAttack = 0.9
