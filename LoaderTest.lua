@@ -1,4 +1,4 @@
---Hirimi Hub Hyper - Rewrite Fixed #7.2
+--Hirimi Hub Hyper - Rewrite Fixed #7.3
 repeat wait() until game:IsLoaded()
 notis = require(game.ReplicatedStorage:WaitForChild("Notification"))
 notis.new("<Color=White>HIRIMI HUB HYPER<Color=/>"):Display()
@@ -1615,7 +1615,7 @@ task.spawn(function()
 end)
 task.spawn(function()
     while task.wait() do
-        if _G.Fast then
+        if FastI then
             pcall(function()
                 CurveFrame.activeController.timeToNextAttack = -1
                 CurveFrame.activeController.focusStart = 0
@@ -1671,38 +1671,6 @@ MainTab:AddToggle({
 		EnableFastAttack = vfastchange
 	end    
 })
-local CameraShaker = require(game.ReplicatedStorage.Util.CameraShaker)
-CombatFrameworkR = require(LP.PlayerScripts.CombatFramework)
-y = debug.getupvalues(CombatFrameworkR)[2]
-spawn(function()
-	game:GetService("RunService").RenderStepped:Connect(function()
-		if _G.FastAttack then
-			if typeof(y) == "table" then
-				pcall(function()
-					CameraShaker:Stop()
-					y.activeController.timeToNextAttack = (math.huge^math.huge^math.huge)
-					y.activeController.timeToNextAttack = 0
-					y.activeController.hitboxMagnitude = 60
-					y.activeController.active = false
-					y.activeController.timeToNextBlock = 0
-					y.activeController.focusStart = 1655503339.0980349
-					y.activeController.increment = 1
-					y.activeController.blocking = false
-					y.activeController.attacking = false
-					y.activeController.humanoid.AutoRotate = true
-				end)
-			end
-		end
-	end)
-end)
-spawn(function()
-	game:GetService("RunService").RenderStepped:Connect(function()
-		if _G.FastAttack == true then
-			LP.Character.Stun.Value = 0
-			LP.Character.Busy.Value = false        
-		end
-	end)
-end)
 MainTab:AddToggle({
 	Name = "Turn On Race V4",
 	Default = false,
