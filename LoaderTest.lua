@@ -1,4 +1,4 @@
---Hirimi Hub Hyper - Rewrite Fixed & Update #8.7
+--Hirimi Hub Hyper - Rewrite Fixed & Update #8.8
 repeat wait() until game:IsLoaded()
 notis = require(game.ReplicatedStorage:WaitForChild("Notification"))
 notis.new("<Color=White>HIRIMI HUB HYPER<Color=/>"):Display()
@@ -5030,9 +5030,9 @@ if Zou then
                     magnitude = (LP.Character.HumanoidRootPart.Position - v.HumanoidRootPart.Position).Magnitude
                     if magnitude <= 300 and v ~= LP.Character then
                         repeat task.wait()
-                            ToTween(v.HumanoidRootPart.CFrame * CFrame.new(0,8,0))
                             EWeapon(Selecttool)
                             EBuso()
+                            ToTween(v.HumanoidRootPart.CFrame * CFrame.new(0,8,0))
                             EClick()
                             NoClip = true
                             SpamEnable = true
