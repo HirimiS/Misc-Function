@@ -1,4 +1,4 @@
---Hirimi Hub Hyper - Rewrite Fixed & Update #8.8
+--Hirimi Hub Hyper - Rewrite Fixed & Update #8.9
 repeat wait() until game:IsLoaded()
 notis = require(game.ReplicatedStorage:WaitForChild("Notification"))
 notis.new("<Color=White>HIRIMI HUB HYPER<Color=/>"):Display()
@@ -5023,6 +5023,15 @@ if Zou then
             DisableTween(KillTrials)
         end    
     }) 
+    function EquipMelee()
+        for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+            if v:IsA("Tool") then
+                if v.ToolTip == "Melee" then
+                    game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+                end
+            end
+        end
+    end
     task.spawn(function()
         while task.wait() do
             if KillTrials then
@@ -5030,7 +5039,7 @@ if Zou then
                     magnitude = (LP.Character.HumanoidRootPart.Position - v.HumanoidRootPart.Position).Magnitude
                     if magnitude <= 300 and v ~= LP.Character then
                         repeat task.wait()
-                            EWeapon(Selecttool)
+                            EquipMelee()
                             EBuso()
                             ToTween(v.HumanoidRootPart.CFrame * CFrame.new(0,8,0))
                             EClick()
