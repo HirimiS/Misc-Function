@@ -1,4 +1,4 @@
---Hirimi Hub Hyper - Rewrite Fixed & Update #8.4
+--Hirimi Hub Hyper - Rewrite Fixed & Update #8.7
 repeat wait() until game:IsLoaded()
 notis = require(game.ReplicatedStorage:WaitForChild("Notification"))
 notis.new("<Color=White>HIRIMI HUB HYPER<Color=/>"):Display()
@@ -2229,7 +2229,7 @@ function changesword()
 end
 spawn(function()
     while task.wait() do
-        if valuenguvcl then
+        if FarmMastery600 then
             local v09 = CheckMasSelect("Sword")
             if v09 >= 600 then
                 changesword()
@@ -3385,7 +3385,6 @@ spawn(function()
                             NoClip = false
                         end
                     end
-                elseif 
                 end
             else
                 Notify("Hirimi Hub", "Not Found Near FM or FM, Start Hop", 5)
