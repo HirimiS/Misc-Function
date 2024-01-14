@@ -1,4 +1,4 @@
---Hirimi Hub Hyper - Rewrite Fixed & Update #9
+--Hirimi Hub Hyper - Rewrite Fixed & Update #9.1
 repeat wait() until game:IsLoaded()
 notis = require(game.ReplicatedStorage:WaitForChild("Notification"))
 notis.new("<Color=White>HIRIMI HUB HYPER<Color=/>"):Display()
@@ -5016,7 +5016,7 @@ if Zou then
         end    
     }) 
     V4Tab:AddToggle({
-        Name = "Kill Player After Trail",
+        Name = "Kill Player After Trails",
         Default = false,
         Callback = function(vKillTrials)
             KillTrials = vKillTrials
@@ -5037,21 +5037,20 @@ if Zou then
             if KillTrials then
                 for i,v in pairs(WS.Characters:GetChildren()) do
                     magnitude = (LP.Character.HumanoidRootPart.Position - v.HumanoidRootPart.Position).Magnitude
-                    if magnitude <= 300 and v ~= LP.Character then
+                    if magnitude <= 300 and v ~= LP.Character.HumanoidRootPart then
                         repeat task.wait()
                             if SpamSkillAllWeapon then
                                 chodienspamhirimixienchetcuchungmay = true
+                                SpamEnable = false
                             else
                                 EquipMelee()
-                                if chodienspamhirimixienchetcuchungmay == true then
-                                    chodienspamhirimixienchetcuchungmay = false
-                                end
+                                SpamEnable = true
+                                chodienspamhirimixienchetcuchungmay = false
                             end
                             EBuso()
                             ToTween(v.HumanoidRootPart.CFrame * CFrame.new(0,8,0))
                             EClick()
                             NoClip = true
-                            SpamEnable = true
                             AimbotPos = LP.Character.HumanoidRootPart.CFrame * CFrame.new(0, -5, 0)
                             SkillAim = true
                         until not KillTrials or not v:FindFirstChild("HumanoidRootPart") or not v:FindFirstChild("Humanoid")
@@ -5063,14 +5062,12 @@ if Zou then
                 end
             end
             if SpamEnable then
-                if not SpamSkillAllWeapon then
-                    VIM:SendKeyEvent(true,122,false,game)
-                    VIM:SendKeyEvent(false,122,false,game)
-                    VIM:SendKeyEvent(true,120,false,game)
-                    VIM:SendKeyEvent(false,120,false,game)
-                    VIM:SendKeyEvent(true,99,false,game)
-                    VIM:SendKeyEvent(false,99,false,game)
-                end
+                VIM:SendKeyEvent(true,122,false,game)
+                VIM:SendKeyEvent(false,122,false,game)
+                VIM:SendKeyEvent(true,120,false,game)
+                VIM:SendKeyEvent(false,120,false,game)
+                VIM:SendKeyEvent(true,99,false,game)
+                VIM:SendKeyEvent(false,99,false,game)
             end
         end
     end)
