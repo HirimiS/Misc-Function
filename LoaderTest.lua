@@ -1,4 +1,4 @@
---Hirimi Hub Hyper - Rewrite Fixed & Update #8.9
+--Hirimi Hub Hyper - Rewrite Fixed & Update #9
 repeat wait() until game:IsLoaded()
 notis = require(game.ReplicatedStorage:WaitForChild("Notification"))
 notis.new("<Color=White>HIRIMI HUB HYPER<Color=/>"):Display()
@@ -5039,7 +5039,14 @@ if Zou then
                     magnitude = (LP.Character.HumanoidRootPart.Position - v.HumanoidRootPart.Position).Magnitude
                     if magnitude <= 300 and v ~= LP.Character then
                         repeat task.wait()
-                            EquipMelee()
+                            if SpamSkillAllWeapon then
+                                chodienspamhirimixienchetcuchungmay = true
+                            else
+                                EquipMelee()
+                                if chodienspamhirimixienchetcuchungmay == true then
+                                    chodienspamhirimixienchetcuchungmay = false
+                                end
+                            end
                             EBuso()
                             ToTween(v.HumanoidRootPart.CFrame * CFrame.new(0,8,0))
                             EClick()
@@ -5057,14 +5064,13 @@ if Zou then
             end
             if SpamEnable then
                 if not SpamSkillAllWeapon then
-                    SendKeyEvents(122)
-                    SendKeyEvents(120)
-                    SendKeyEvents(99)
-                else
-                    chodienspamhirimixienchetcuchungmay = true
+                    VIM:SendKeyEvent(true,122,false,game)
+                    VIM:SendKeyEvent(false,122,false,game)
+                    VIM:SendKeyEvent(true,120,false,game)
+                    VIM:SendKeyEvent(false,120,false,game)
+                    VIM:SendKeyEvent(true,99,false,game)
+                    VIM:SendKeyEvent(false,99,false,game)
                 end
-            else
-                chodienspamhirimixienchetcuchungmay = false
             end
         end
     end)
