@@ -1,4 +1,4 @@
---Hirimi Hub Hyper - Rewrite Fixed & Update #9.2
+--Hirimi Hub Hyper - Rewrite Fixed & Update #9.35
 repeat wait() until game:IsLoaded()
 notis = require(game.ReplicatedStorage:WaitForChild("Notification"))
 notis.new("<Color=White>HIRIMI HUB HYPER<Color=/>"):Display()
@@ -5037,7 +5037,7 @@ if Zou then
             if KillTrials then
                 for i,v in pairs(WS.Characters:GetChildren()) do
                     magnitude = (LP.Character.HumanoidRootPart.Position - v.HumanoidRootPart.Position).Magnitude
-                    if magnitude <= 300 and v ~= game.PLayers.LocalPlayer then
+                    if magnitude <= 300 and v ~= game.Players.LocalPlayer then
                         repeat task.wait()
                             if SpamSkillAllWeapon then
                                 chodienspamhirimixienchetcuchungmay = true
