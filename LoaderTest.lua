@@ -1,4 +1,4 @@
---Hirimi Hub Hyper - Rewrite Fixed & Update #8.5
+--Hirimi Hub Hyper - Rewrite Fixed & Update #8.4
 repeat wait() until game:IsLoaded()
 notis = require(game.ReplicatedStorage:WaitForChild("Notification"))
 notis.new("<Color=White>HIRIMI HUB HYPER<Color=/>"):Display()
@@ -5065,7 +5065,6 @@ if Zou then
         Default = false,
         Callback = function(vSpamSkillAllWeapon)
             SpamSkillAllWeapon = vSpamSkillAllWeapon
-            DisableTween(SpamSkillAllWeapon)
         end    
     }) 
 end 
